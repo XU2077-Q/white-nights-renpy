@@ -1,5 +1,5 @@
 ## 《白夜》Ren'Py 版剧本 —— 由 tools/export_renpy.js 从 js/script.js 全量转写，勿手改
-## 谷羽译本全文 655 拍 · 六章 · 剪影立绘 lit/dim 演出与网页版一致
+## 谷羽译本全文 655 拍 · 六章 · 彩色立绘 lit/dim 演出与网页版一致
 
 define nn = Character(None, what_font="fonts/LXGWWenKai-Regular.ttf", what_color="#e6ecf7")
 define dreamer = Character("幻想家", color="#a8bce0")
@@ -21,29 +21,17 @@ image bg_open_street = "images/bg/open_street.jpg"
 image bg_room = "images/bg/room.jpg"
 image bg_street = "images/bg/street.jpg"
 image dreamer default = "images/sprite/dreamer_default.png"
-image dreamer default glow = im.MatrixColor(im.Blur("images/sprite/dreamer_default.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image dreamer excited = "images/sprite/dreamer_excited.png"
-image dreamer excited glow = im.MatrixColor(im.Blur("images/sprite/dreamer_excited.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image dreamer shy = "images/sprite/dreamer_shy.png"
-image dreamer shy glow = im.MatrixColor(im.Blur("images/sprite/dreamer_shy.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image dreamer think = "images/sprite/dreamer_think.png"
-image dreamer think glow = im.MatrixColor(im.Blur("images/sprite/dreamer_think.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image granny default = "images/sprite/granny_default.png"
-image granny default glow = im.MatrixColor(im.Blur("images/sprite/granny_default.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image lodger default = "images/sprite/lodger_default.png"
-image lodger default glow = im.MatrixColor(im.Blur("images/sprite/lodger_default.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image lodger serious = "images/sprite/lodger_serious.png"
-image lodger serious glow = im.MatrixColor(im.Blur("images/sprite/lodger_serious.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image nastenka expect = "images/sprite/nastenka_expect.png"
-image nastenka expect glow = im.MatrixColor(im.Blur("images/sprite/nastenka_expect.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image nastenka joy = "images/sprite/nastenka_joy.png"
-image nastenka joy glow = im.MatrixColor(im.Blur("images/sprite/nastenka_joy.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image nastenka sad = "images/sprite/nastenka_sad.png"
-image nastenka sad glow = im.MatrixColor(im.Blur("images/sprite/nastenka_sad.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image nastenka smile = "images/sprite/nastenka_smile.png"
-image nastenka smile glow = im.MatrixColor(im.Blur("images/sprite/nastenka_smile.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 image nastenka tears = "images/sprite/nastenka_tears.png"
-image nastenka tears glow = im.MatrixColor(im.Blur("images/sprite/nastenka_tears.png", 16), im.matrix.colorize("#8fb4e8", "#8fb4e8"))
 
 transform pos_left:
     xalign 0.18 yalign 1.0 zoom 0.63
@@ -55,10 +43,6 @@ transform sp_lit:
     easein 0.45 matrixcolor BrightnessMatrix(0.0) yoffset 0 zoom 0.63 xoffset 0
 transform sp_dim:
     easein 0.45 matrixcolor BrightnessMatrix(-0.55) yoffset 14 zoom 0.60 xoffset 0
-transform sp_glowfx:
-    zoom 0.63 xoffset 0 yoffset 0
-    alpha 0.0
-    easein 0.45 alpha 0.8
 transform glow_0:
     alpha 0.00
 transform glow_25:
@@ -164,7 +148,6 @@ label ch1:   # 第一夜
     nn "忽然间，一次最让我出乎意料的奇遇发生了。"
     scene bg_embankment with dissolve
     show nastenka sad at pos_right, sp_dim
-    hide nastenka_glow
     nn "那边有个女子，靠近运河栏杆，只见她把胳膊肘撑在栏杆上，好像正聚精会神地凝视着浑浊的运河水。她头戴招人喜欢的宽檐帽，披着式样时髦的黑斗篷。“这一定是个黑发姑娘。”我想。看来她没有听见我的脚步声，当我屏住呼吸，怀着一颗狂跳的心从她身边走过时，她甚至连动都没动一下。"
     nn "“奇怪！”我想，“大概她想什么想得入迷了。”我忽然站住，僵在那里了。我听到低低的抽泣声。是的！我没有听错：姑娘在哭泣，过了一会儿，又听见一阵呜咽啜泣。天啊！我的心揪了起来。尽管我见了女人就胆怯，但这次碰上的可是非同寻常的时刻！……"
     nn "我转身向她走近一步——假如我不知道“小姐”这一称呼在俄国上流社会的所有小说中已经使用过千百次的话，我一定会冲她喊一声“小姐”，正因为我知道这一点，才没有喊出来。"
@@ -175,215 +158,137 @@ label ch1:   # 第一夜
     nn "姑娘一阵风似的跑开，但摇摇晃晃的先生穷追不舍，终于追上了，姑娘尖声大叫——这时候，我得感谢命运，这一次，我的右手正好握着一根带木瘤的、结实的手杖。"
     nn "我猛地蹿上对面的人行道，那位动作冒失的先生马上明白了是怎么回事，领悟出不容反唇相讥的情由，因而没有作声，便落到了后边，等我们走出很远了，他才用措词相当强硬的语言向我表示抗议。但他的话，我们几乎已经听不见了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka sad at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "请允许我挎着您的胳膊吧，”我对那位素不相识的姑娘说，“这样他就不敢再来和我们纠缠了。"
     nn "她默默地向我伸出臂膀，由于激动和惊吓，她的胳膊仍在发抖。哦，莽撞的先生！此时此刻我是多么感激您啊！我扫了她一眼：果然是个非常可爱的黑发姑娘——我猜对了；她那黑黑的睫毛上还闪烁着晶莹的泪珠，是由于刚才的惊恐，还是因为以往的悲伤而流泪——我可不知道。"
     nn "然而她的唇边已经漾出笑意。她也偷偷看了看我，脸上微微泛出红晕，随即垂下了眼睛。"
     dreamer "瞧，刚才您为什么把我撇开呢？要是有我在旁边，什么事也不会发生的……"
     show nastenka sad at pos_right, sp_lit
-    show nastenka sad glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "可是我不了解您啊，我以为您也……"
     show nastenka sad at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "难道您现在就了解我了吗？"
     show nastenka sad at pos_right, sp_lit
-    show nastenka sad glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "有一点儿了解了。不过，就说这件事吧，您为什么发抖呢？"
     show nastenka sad at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "啊，您一下子就猜到点子上了！”我回答道，由于发觉我的这位姑娘聪明伶俐而格外高兴，因为聪明从来不会和美貌不相容的。“对，您一眼就看透了您碰到的是个什么人。"
     dreamer "不错，我见了女人就胆怯、就不安，我不否认，这种忐忑不安的心情并不亚于您在几分钟前受了那位先生惊扰时恐慌不安的程度……我现在仍觉得有些慌乱。好像是在做梦，可我即使在梦中也没有想到，有朝一日会和一位女性说话。"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "怎么会这样？真——的——吗？……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "真的，如果说我的胳膊还在发抖的话，那么，这就是因为它从来还不曾接触过像您这么好看、这么柔细的臂膀。我从来没有接近过女人；换句话说，我一向不习惯和女人相处。这会儿我就弄不清楚——是否跟您讲了什么蠢话？"
     dreamer "请您直率地跟我说吧，我可以预先告诉您，我可不是那种一触即跳的人……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "不，没什么，没什么；恰恰相反。既然您已经要求我有话直说，那么，我可以告诉您，女人们喜欢的就是这种腼腆的性格；要是您想再多了解一些的话，我可以告诉您，我也很喜欢这种性格，而且我在到家以前，是不会把您撵走的。"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "您一定很快就能使我不再胆怯，”我脱口而出，兴奋得连气都透不过来，“这么一来，我再也没有什么手段可用啦！……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "手段？什么手段？干什么用的？您这话说得可不好。"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "我错了，再不这么说了。我说走了嘴；不过，您怎么能要求一个人在这种时刻没有任何欲望呢……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "想让人家喜欢，是吗？"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "嗯，对；那就请您看在上帝的分上发发善心吧。您可以评判我是个怎样的人！要知道我已经二十六岁了，可是我从没有结交过什么人。唉，我怎么才能把话说得中肯、得体又恰到好处呢？把一切都开诚布公地告诉您，也许对您会更好一些……我的心渴望倾诉时，我就难以保持沉默。"
     dreamer "好吧，全都无所谓……信不信由您，我没有结识过任何女人，从来没有，从来没有！连一个熟悉的也没有！我只是成天幻想，到头来总会在什么时候遇上一个人。您要是能了解我曾经有过多少次这样的恋爱就好了！……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "可是怎么去爱，又爱上了什么人呢？……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "没有爱上什么人，爱的是理想，爱的是梦中人。我凭借幻想创作了一部部爱情小说。哦，您不了解我！真的，不必隐瞒，我遇见过两三个女人，可她们是些什么样的女人呢？不过是几个女房东罢了……但是，如果我告诉您一些事情，会让您笑个够的。"
     dreamer "有几次在街上，我想跟一位贵妇人说说话，只是随便说几句话，自然是在独自一个人的时候；话自然要说得腼腆、庄重、热情；我想告诉她，我孤单得要死，求她不要撵我走，告诉她我无缘结识任何女人；让她意识到，接受像我这样一个不幸者羞怯的恳求，甚至是一个女人应尽的责任。"
     dreamer "最后我要说，我的全部要求，不过是想请她跟我说两句像对待兄弟一般有同情心的话，不要一迈步就赶开我，要相信我的话，倾听我要说的话，要是想嘲笑我也不要紧，但要鼓励我，跟我说两句话，仅仅两句，哪怕此后我和她永远不再相见……但是您笑了……"
     dreamer "话要说回来，正是为了让您笑一笑，我才这样说的……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "您别计较，我笑的是您自己跟自己过不去。您只要去试试，一定会成功，即便在大街上去尝试，也许都能如愿；越坦率越好……"
     nastenka "任何一个心地善良的女人，只要她不愚蠢，或者说，只要她当时不为什么事情特别生气，她就不会那么狠心，决不会连您那样怯懦地求她说两句话都不肯就打发您走开……可是，我说的是什么呀！她肯定是把您当成疯子了。这只是我个人的看法。人怎么生活在这世上，我自己又懂得多少呢！"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "啊，谢谢您！”我大声说道，“您还不明白，现在您已经为我做了多少！"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "好啦，好啦！不过还要请您告诉我，为什么您看得出我是这样一个女人，跟她……嗯，您认为她值得……关心和交往……总之，不是您所说的那种女房东。您打定主意朝我走过来，又是为什么呢？"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "为什么？为什么？因为您是孤身一个人，那位先生又太无礼，现在是夜里：这是义不容辞的事，您自己也会同意这一点的……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "不对，不对，早在这事以前，在那里，在路那边，您不是已经有意朝我走过来了吗？"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "在哪里？在哪一边？不过，说实话，我真不知道怎样回答您才好；我担心的是……您知道吗？我今天很幸福；一边走一边唱，我跑到城外；我还从来没有过像这么幸福的时刻。您……也许只是我觉得……哦，如果我使您又想起刚才的事，就要请您原谅了：当时我觉得您正在哭泣，我……"
     dreamer "我不忍心就那么听着……我的心里难受……啊，我的天！难道我就不能为您分担忧愁吗？难道对您怀有兄弟般的爱怜之心也是罪过吗？……对不起，我说出了爱怜这个词……喏，总而言之，难道我情不自禁地想走近您的身边也会冒犯您吗？……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "别说了，够了，不必再讲了……”姑娘低下头，紧握着我的手说，“全怪我自己不好，不该提这事；不过，我很高兴，我没有看错您……可是，您瞧，我都到家了；我该从这里进巷子；只有两步路……再见，谢谢您！……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "难道就这样，难道我们永远不能再见面了吗？……难道就到此为止了吗？"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "瞧您说的，”姑娘笑着说，“起初您只想要我说两句话，可现在却……不管怎样吧，我对您不想再说什么了……我们或许还能见面……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "我明天还到这里来。”我说，“噢，原谅我，我已经在恳求了……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "是的，您一点耐心都没有……您简直是在提要求了……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "请听我说，请听我说！”我打断了她的话，“如果我又对您说了什么蠢话，那就请您原谅吧……我想说：明天我不能不到这里来。我是个爱幻想的人；我缺乏真正的生活，在我看来，像现在这样的时刻是非常罕见的，因此我不能不来重温旧梦。"
     dreamer "我会通宵达旦地思念您，整个星期、一年到头地思念您。明天我一定来这儿，就在这儿，就在这个地方，在这个时刻，回忆前一天的情景。我会觉得很幸福。这已经是个叫我感到亲切的地方。在彼得堡，像这样的地方有过两三处。有一次，我追忆往事，甚至哭了起来，就跟您一样……"
     dreamer "谁知道呢，十分钟前您哭泣流泪，说不定也是由于想起了往事……不过，请原谅，我又忘乎所以了；也许，过去的什么时候，您在这个地方曾感到非常幸福……"
     show glow_overlay at glow_65 with dissolve
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "好吧，”姑娘说，“我明天大概还会来这儿，还是十点钟。我看得出，我已经拦不住您了……实际情况是：我不来不行；您不要以为我是跟您约会；现在有言在先，我必须到这里来，是为了我自己的事。不过，好吧……嗯，我索性跟您直说了吧：您当真要来，我也无所谓；"
     nastenka "首先，像今天这样不愉快的事还可能发生，这倒没什么关系……一句话，我不过想见到您……好跟您说两句话。只是，您得明白，现在您不会把我看得很坏，是吧？别以为我为人轻浮，私下约会……我是不会跟别人有约会的，除非是……不过，我还是保守秘密吧！可我们事先要有个协议……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "有个协议！请说，请说，先把一切都说出来；什么事我都同意，什么事我都不在乎。”我兴奋地叫了起来，“我可以担保：一定恭敬从命……您是了解我的……"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "正因为了解您，才会请您明天来。”姑娘笑着说，“我完全了解您。不过，请注意，您得答应一个条件；首先（您要乖乖的，我让您干什么，您就得干什么——瞧，我说话很直率），您可不要爱上我……因为那是不行的，您要听话。我倒乐意交个朋友，好，我把手伸给您……"
     nastenka "但恋爱可不行，求求您了！"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "我可以向您起誓。"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "算了，不必起誓，因为我知道，您会燃起激情，像火药一样爆发。我这样说话，请别见怪。要是您知道就好了……我也没有一个可以说说话、帮我出出主意的人，不过您是例外。我了解您，就像我们已是有二十年交情的朋友……您不会言而无信，是吧？……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "您看得出来……只是我不知道怎么样才能熬过这一天一夜。"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "去好好睡一觉，晚安！——要记着，我已经信得过您了。您刚才发的感慨真好：人的每一种情感，哪怕是兄弟之间的手足之情，又有谁能说得清楚！您知道吗，这话说得真好，使我马上闪过可以信赖您的想法……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "感谢上帝！不过，信赖我什么呢？这是怎么一回事？"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     nastenka "明天再说，暂且保密。这对您会更好一些；看上去隐隐约约还有点浪漫气息呢。明天，我也许会告诉您，也许不会……我还是想先告诉您一些情况，好加深我们的相互了解……"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "噢，明天我要把自己的身世全讲给您听！这是怎么啦？我真是碰上了奇迹……天啊，我是在哪里啊？请告诉我，您从一开始就没有发脾气，没有像别的女人那样把我赶走，您会为此感到不满吗？只用两分钟，您就使我成了永远幸福的人。对，一个幸福的人；"
     dreamer "谁知道呢，也许您使我得到了内心的安宁，排除了我的疑虑……也许，这样的时刻正在临近……好吧，明天我要向您和盘托出，您会明白一切……"
     dreamer "好，我答应；您要从头讲起……"
-    hide nastenka_glow with dissolve
     hide nastenka with dissolve
-    hide dreamer_glow with dissolve
     hide dreamer with dissolve
     nastenka "我同意。"
     dreamer "再见。"
@@ -401,197 +306,123 @@ label ch2:   # 第二夜
     hide blkt with dissolve
     hide blk with dissolve
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "看，您总算熬过来了！"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "我在这儿已经两个钟头了；您不明白，这一整天我是怎么过来的！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "我明白，我明白……还是言归正传吧。您知道我为什么要来吗？可不是要像昨天那样胡扯一通。我想说的是：今后我们应当表现得更聪明些。昨天我想了很久，把这一切都考虑过了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "什么事应当更聪明些呢？对我来说，我愿意如此。不过，说真的，像现在这样聪明，我一生当中还是头一回呢。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "真的吗？首先，我求您不要把我的手攥得这么紧；其次，我要向您声明，关于您，我今天已经考虑了很久了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "噢，结果怎么样呢？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "结果吗？结果是一切都要从头来，因为我今天得出的最后结论是，我对您还毫不了解；我昨天的表现像个孩子，像个小姑娘；自然啰，之所以会这样，全怪我下不了狠心，就是说，我吹嘘了自己，就像我们对待自己的所作所为，往往从剖析开始，而以赞美告终。"
     dreamer "因此，为了改正过错，我下定决心要对您进行一次彻底的了解。由于无法找到别人打听您的情况，所以您必须自我介绍，把您的底细全部说出来。好啦，您究竟是什么人？快点，请开始说吧，说说您的身世。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "身世！”我惊叫起来，“身世！可是谁告诉您我有什么身世？我没有什么身世可言……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "如果您没有什么身世，又是怎样活到现在的呢？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "根本没有任何身世可说！是这样，我活着，就像通常所说的，关门过日子，也就是完全无依无靠——孤单单一个人，孑然一身。什么是孤身一人，您懂得吗？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "怎么会是一个人呢？这么说，您从来没遇见过任何人吗？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "啊，不，遇见倒是遇见过——可我终究还是孤身一人。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "怎么？难道您没有和什么人说过话吗？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "严格说来，没有说过。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "那么，您究竟是什么人，请说说看！等一下，让我来猜猜：您大概和我一样，也有个奶奶。我奶奶是个瞎子，一辈子不肯放我出门，什么地方都不准去，害得我几乎连话都不会说了。"
     dreamer "两年前，我闹了一次，她眼看管不住我了，就想出了个主意，把我叫去，用别针把我的衣服和她的衣裳连在一起，从那时候起，我们俩就这样整天坐着；她虽然眼睛看不见，却能织袜子，我只得坐在她旁边做针线活儿，或是念书给她听——这种老办法真怪，我被她用别针拴住已经有两年了……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "唉，我的天，真可怜！可是我没有，连一位这样的奶奶也没有。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "既然没有，您怎么会在家里待着呢？……"
     dreamer "听我说啊，您不是想知道我是个怎样的人吗？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "哎，对呀，对呀！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "要按‘人’这个词的严格意义说？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "要完全按严格的词义说。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "好，我——是一个怪人。"
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "怪人，怪人！什么怪人？”姑娘高声说道，接着哈哈大笑起来，好像整整一年都没有机会大笑似的，“跟您在一起可真有意思！看，这里有张长椅，咱们坐一坐吧！没有人路过这里，谁也听不见我们说话——您开始说您的身世吧！因为您没有说服我，您有您的经历，只是瞒着不说罢了。"
     nastenka "您先讲讲怪人是什么意思。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "怪人？怪人嘛，就是脾气古怪的人，荒唐可笑的人！”我回答道，随着她那带有稚气的笑声，我也哈哈大笑起来，“这是一种性格。请注意：您知道什么是幻想家吗？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "幻想家！瞧您说的，怎么会不知道？我自己就是个幻想家！我有时坐在奶奶身边，什么稀奇古怪的念头不往脑袋里钻呀！唉，一个人要是开始胡思乱想，就会想入非非——‘好家伙，我居然嫁给了一个中国皇太子……’要知道，有时候幻想起来还真惬意呢！不，也不尽然，天晓得！"
     nastenka "特别是撇开幻想专想心事的时候。"
     nn "姑娘又补了一句，这时的神情已变得相当严肃了。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "太妙了！您既然幻想过嫁给中国的皇太子，自然会完全理解我。好，请听吧……不过，等一下，我还不知道您的名字叫什么……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "总算想起来了！您早就该想到问一声呀！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "啊，上帝！我这脑子竟没有想到，我是高兴过头了……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "我叫娜斯津卡。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "娜斯津卡！就这些？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "就这些！难道您觉得少吗？您这人真是贪心不足啊！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "觉得少吗？恰恰相反，很多，很多，非常之多。娜斯津卡，您这个好姑娘，从初次见面起，您在我心目中就已经是娜斯津卡了！"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "这就对了！请讲吧！"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "好，娜斯津卡，那就听我讲一讲十分荒唐可笑的身世吧。"
     nn "我在她的身边坐下，摆出一副近乎迂阔的庄重神态，像念稿子似的讲了起来："
     dreamer "娜斯津卡，也许您还不知道，彼得堡有一些相当古怪的偏僻角落。那一轮普照全体彼得堡人的太阳，好像对这些地方不屑一顾；而照射着这些角落的似乎是另一个特地为它们定制的新太阳，它放射出异样的光华照耀着一切。"
     dreamer "在这些角落里，亲爱的娜斯津卡，生活也似乎完全不同，与我们周围那种沸腾的生活毫无相似之处，这种生活也许存在于一个非常遥远的未知世界，而不是在我们这里，不是在我们这个严峻的、一本正经的时代。这种生活其实是一种混合物，是一种纯粹的幻想、热切的理想以及（唉，娜斯津卡！"
     dreamer "）呆滞无聊和庸碌无为之类的大杂烩，甚至还有令人难以置信的粗俗卑鄙，那就更不必去诉说了。"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "嘿！我的天呀！好一段开场白！接下来我会听到些什么呢？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "请听我说，娜斯津卡（我觉得叫您娜斯津卡永远也叫不够），请听我说，在这些偏僻角落里住着一些古怪的人——幻想家。如果要下一个严密定义的话，幻想家不是一般的人，而是某种中性动物。幻想家多半蛰居在某个人迹罕至的角落，好像在那里隐匿藏身，甚至怕见白天的阳光；"
     dreamer "他只要钻了进去，就会像蜗牛一样跟他住的角落长在一起，换句话说，他在这方面至少酷似乌龟，那种把身子和住处连在一起的有趣的动物。您是怎么想的？为什么他这样喜爱周围的四堵墙壁，喜爱那一律涂成绿色、熏得乌黑、阴暗凄凉、散发着呛人烟味的墙壁呢？"
     dreamer "这位可笑的先生，只有很少几个熟人（结果是所有的熟人都拂袖而去，再不登门），其中有一位来访问他的时候，这个可笑的人接待客人时竟是那样尴尬窘迫，脸色大变，张皇失措，好像他在屋里刚犯下什么罪孽，好像他偷偷印了一些假钞，或是写了什么诗要投给杂志，还附上一封匿名信，"
@@ -604,47 +435,31 @@ label ch2:   # 第二夜
     dreamer "与此同时，这位朋友怎么也控制不住自己的幻想，无法摆脱一个小小的古怪念头，这就是：要把刚才主人在整个会面期间的脸色和一只倒霉的小猫的神情约略做一番对比——小猫被孩子们蛮横地抓住，揉来搓去，受到恐吓与百般欺凌，弄得狼狈已极，最后，躲开了那些顽童，"
     dreamer "钻到椅子下面的阴暗处，在那里休息，整整一个小时气得竖起背毛，喷着鼻息，用两只爪子洗它那蒙垢受辱的小脸，此后很久很久还怀着敌意，观望四周的环境和动静，甚至怒视着好心肠的女管家为它留下的主人家的残羹剩饭，这又是为什么呢？……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "您听我说，”娜斯津卡插话了，她两眼圆睁，微微张着小嘴，一直带着惊讶的神情听我说话，“您听我说：我根本不知道为什么会发生这些事情，也弄不明白为什么您要向我提出这样一些荒唐可笑的问题；不过，我料想，所有这些稀奇古怪的遭遇一定和您本人有关，每字每句都跟您有关。"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "毫无疑问。"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好，既然毫无疑问，那就接着讲吧。”娜斯津卡说道，“因为我很想了解结局如何。"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "娜斯津卡，您想知道，我们的主人公，或者更确切一点说，我这个人，因为整个故事的主人公就是我，一个微不足道的小人物，在自己的角落里都干了些什么吗？您想知道，为什么一位朋友的不期而至，竟害得我整天这样惊慌、忙乱、举止失措吗？"
     dreamer "您想知道，我的房门被人推开时，为什么我会惊恐得跳起来，窘得满脸通红，为什么我不善于款待客人，而自己的殷勤好客反倒成了沉重的思想负担，并为此羞愧得要死吗？"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "嗯，不错，不错！”娜斯津卡回答说，“我想知道的正是这些。请注意：您讲得真是出神入化了。不过，可不可以讲得不那么天花乱坠呢？您说的很像是从书本上读来的。"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "娜斯津卡！”我用庄重的严肃口吻回答道，却忍不住要笑出声来，“亲爱的娜斯津卡，我知道，我是讲得天花乱坠，可是——很抱歉，我不会用别的方式讲话。现在，亲爱的娜斯津卡，现在我好比是所罗门王的魂灵，它在贴有七张封条的坛子里被禁闭了一千年，这七张封条终于被人撕掉了。"
     dreamer "现在，亲爱的娜斯津卡，我们久别重逢了——因为我很早以前就认识您，娜斯津卡，因为我早就在寻找一个人，这次见面就是征兆，表明我找的正是您，说明我们命中注定要在此刻相会——现在，我头脑中的几千个闸门都已经打开了，我必须让滔滔不绝的话语像江河一般奔流，否则我就会憋死。"
     dreamer "因此，请不要打岔，娜斯津卡，请您乖乖地好好听着；要不我就不讲了。"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不、不、不！别这样！您往下讲吧！接下来我一句话也不说就是了。"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "那我就接着讲：娜斯津卡，我的朋友，一天当中有那么一个小时叫我特别喜爱。那时，几乎所有的杂事、公事、业务都告一段落，大家全忙着赶回家去吃饭，去躺下休息一会儿，一路上还在琢磨着一些开心的事，全都关系到如何消磨黄昏、夜晚和剩下的闲暇时光。"
     dreamer "在这一个小时，我们的主人公——娜斯津卡，请允许我用第三人称讲话，因为用第一人称讲这一切委实令人羞愧难当——是这样，在这一个小时里，我们的主人公也并非无事可做，他跟在别人的后面行走。不过，有一种异样的满足神色，在他那苍白的、仿佛已有些发皱的脸上忽隐忽现。"
     dreamer "他满心欢喜地凝望着晚霞在彼得堡的冬日长空中缓缓消失。我说他凝望，这是撒谎；他不是凝望，而似乎是心不在焉地看着，仿佛已经筋疲力尽，或是当时正想着别的更有意思的心事，因而只能抽工夫对周围的一切匆促地、几乎是在无意之间瞥上一眼。"
@@ -689,38 +504,25 @@ label ch2:   # 第二夜
     nn "我原以为，睁着一双聪慧的眼睛听我说话的娜斯津卡会发出充满稚气、忍俊不禁的欢快笑声。我已经后悔扯得太远，徒劳无益地讲那些郁积已久的心事，提起这些事来，我能讲得像照本宣科一般，因为我早已为自己做出了判决，现在忍不住要宣读一遍，坦白招认，并且不指望能得到别人的谅解；"
     nn "但是，叫我吃惊的是，她竟然沉默不语，过了不久，才轻轻握了握我的手，用一种犹豫的关切口吻问道："
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "莫非您当真这样过一辈子？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "一辈子，娜斯津卡。”我回答道，“一辈子，看来，我将这样了此一生！"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不，不能这样，”她深感不安地说，“也不会是这样；也许，我也会像这样在奶奶身边度过一生。听我说，这样活得太糟了，您知道吗？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "我知道，娜斯津卡，我知道！”我情不自禁地喊了起来，“现在，我比任何时候都更清楚，我白白地断送了自己的似锦年华！现在我明白了这一点，由于认识到是上帝给我送来了您，我好心的安琪儿，向我指出并证实了这一点，使我更加感到心疼。"
     dreamer "我坐在您的身旁和您说着话，同时很怕考虑将来的事情，因为将来——我又会孤孤单单，又要过那种毫无生气、毫无价值的生活；再说，既然我已经真的坐在您的身旁，感到这样幸福，我又有什么可幻想的呢！"
     dreamer "啊，祝愿您，亲爱的姑娘，凡事顺心如意，因为从第一次见面，您就不嫌弃我，因为我现在可以说：在自己的一生中至少有两个夜晚我真正生活过了！"
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "哎呀！不，不！”娜斯津卡叫了起来，眼睛里闪烁着晶莹的泪珠，“不，今后再也不能这样了；我们不能就这样分手！两个晚上算得了什么呢！"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "啊，娜斯津卡，娜斯津卡！您可知道，您会使我多么长久地感到内心平和！您可知道，我再也不会像以前那样看轻自己！您可知道，我也许再不会为我一生中犯下的罪过而苦恼，因为这样的生活正是罪孽！您不要以为，我这是言过其实，看在上帝的分上，不要这么想。"
     dreamer "娜斯津卡，因为我有时就会遇到非常苦恼、非常苦恼的时刻……因为我在那时候已经感到再也无法开始过一种真正的生活；因为我感觉已经完全丧失了对真正的现实事物的分寸感和辨别力；因为到头来我会把自己咒骂一通；"
     dreamer "因为在度过那些幻想的夜晚之后，我又会有片刻的清醒，这片刻真令人不寒而栗！"
@@ -736,47 +538,31 @@ label ch2:   # 第二夜
     dreamer "还会自问：在这些岁月中自己究竟做了些什么？似锦年华葬送在什么地方？是不是真的生活过？一个人会对自己说：瞧啊，瞧世人变得多么冷酷！再过一些年月，随之而来的将是令人沮丧的孤独，将是在手杖的支撑下颤巍巍的衰迈晚年，此后便是悲哀和凄凉。"
     dreamer "幻想的世界将黯然失色，各种向往将枯萎凋零，像黄叶一样纷纷从树上飘落下来……啊，娜斯津卡！要知道，孑然一身、孤苦伶仃，甚至没有值得悔恨的事，这该多么可悲——没有，什么也没有……因为那失去的一切，那不值一提、愚蠢、等于零的一切，不过是大梦一场！"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好啦，别再让我心酸了！”娜斯津卡说道，一边抹掉从眼眶里滚下的泪珠，“现在这一切都已经过去了！往后我们俩在一起好了；从现在起，不管我发生了什么事，我们永远都不会分离。您听我说，我是个普通的姑娘，受的教育不多，尽管奶奶为我请过家庭教师；"
     nastenka "但是，说真的，我很理解您，因为眼下您跟我讲的一切，当奶奶用别针把我别在她的衣服上的时候，我就有过亲身体验了。当然，要像您讲得那么好，我可做不到。"
     nastenka "我受的教育不多，”她犹犹豫豫地又加了一句，因为她对我的动人口才和高雅辞藻还是颇为敬佩的，“不过，我非常高兴，因为您对我吐露了全部真情。我现在了解您了，完全了解您了。您知道吗？我也想把自己的身世讲给您听听，原原本本，毫不隐瞒地讲，不过您听了以后，得帮我出个主意。"
     nastenka "您是个绝顶聪明的人，您能答应替我出出主意吗？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "哎呀，娜斯津卡！”我回答道，“我虽然从来没替别人出过主意，更不是一个会出主意的聪明人，但是，我现在看得出，我们要是能永远这样生活，倒不失为一种相当聪明的做法，而且每个人都能给对方出很多聪明的主意！哎，我的好娜斯津卡，您要我出什么样的主意呢？有话请直说了吧；"
     dreamer "现在我是这么幸福快乐，这么智勇双全，讲个什么事是毫不费劲的。"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不，不！”娜斯津卡笑着打断了我的话，“我要的不只是聪明的主意，我要的是情同手足的真诚忠告，就好像您已经爱了我一辈子了那样！"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "好吧，娜斯津卡，好吧！”我兴奋得叫了起来，“就算我爱了您二十年了，可是也从不会像现在爱得这么强烈啊！"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "把手伸过来吧！"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "在这儿呢。"
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好，现在我要讲自己的故事了！"
 
 label ch3:   # 娜斯津卡的故事
@@ -790,26 +576,17 @@ label ch3:   # 娜斯津卡的故事
     hide blkt with dissolve
     hide blk with dissolve
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "我的故事有一半您已经知道了，那就是，您知道我有一个老奶奶……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "要是另一半也像这么简短的话……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "别开口，听我说。有言在先：不许插嘴，不然的话，我说不定会被您弄糊涂的。好，您乖乖地听着就是了。"
     show granny default at pos_center, sp_dim
-    hide granny_glow
     nastenka "我有个老奶奶。我来到她这里时还是个很小的女孩儿，因为我的父母全都去世了。可以肯定，奶奶过去很有钱，因为她现在还常提到当年的好时光。她教我学法语，后来又给我请教师。我十五岁时（现在已经十七岁），我们谁也不再提学习的事了。原因是当时我搞了一次恶作剧；"
     nastenka "我干了什么事无须告诉您；只要说一句就够了，过错并不大。只是一天早上，奶奶把我叫到跟前，说是她眼睛瞎了，看不住我了，说着便拿起一根别针把我的衣服和她的别在了一起，当时她说，如果我当真不学好的话，我们就要这样坐上一辈子。"
     nastenka "总之，起初我怎么也无法脱身：干活、念书、学习——全得拴在奶奶身边。有一次，我想蒙骗她，好歹说动了菲克拉坐到我的位子上。菲克拉是我们家的女用人，是个聋子。菲克拉代我坐在那里；奶奶这时候在安乐椅里睡着了，我跑出去找附近的一个要好的女孩儿。唉，结果可糟啦。"
@@ -818,18 +595,12 @@ label ch3:   # 娜斯津卡的故事
     nastenka "听着，不许您讥笑我奶奶。我发笑是因为觉得这事挺好玩儿的……有什么办法呢？说实话，奶奶就是这样子，不过，我对她还是有好感的。嗬，这一回可够我受的：我立刻又被拴在老地方，再也不准动一动了。"
     nastenka "哎，我忘了告诉您，我们家的房子是自己的，是奶奶的，那是一座小房子，一共只有三扇窗，房子全是木头的，并且很老了，跟奶奶的年纪差不多；上面有间小阁楼；后来小阁楼里搬来了一位新房客……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show granny default at pos_center, sp_dim
-    hide granny_glow
     dreamer "这么说，原来还有位老房客啰？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show granny default at pos_center, sp_dim
-    hide granny_glow
     nastenka "那还用说，当然有过，"
     nn "娜斯津卡回答道，“那人从不多嘴多舌，比您强多了。真的，他难得开口讲话，是个又瘦又哑、又瞎又瘸的小老头儿；最后也没有活下来，他死了；此后只好再找一个新房客，因为我们没有房客就没法过下去：阁楼的房租再加上奶奶的养老金几乎就是我们的全部收入了。"
     nn "说来也凑巧，新房客竟是个年轻人，他不是本地人，是从外地搬来的。因为他不讨价还价，奶奶便答应了他，后来奶奶问：‘怎么样，娜斯津卡，我们的房客是年轻人还是老头儿？’我不想撒谎，于是回答说：‘这么说吧，奶奶，不算很年轻，也不是老头儿。’‘怎么，长得挺好看吗？"
@@ -837,10 +608,8 @@ label ch3:   # 娜斯津卡的故事
     nastenka "我还是不想撒谎。‘对，我看嘛，长相挺不错，奶奶！’奶奶说：‘哎哟！罪过，罪过！小孙女儿，我得告诉你，你可不能偷着瞧人家。如今是什么世道啊！你看，来了这么个小房客，长相居然也不错：跟很久以前可大不一样啦！’"
     nastenka "奶奶总是怀念当年的青春时光！很久以前，她比现在年轻，太阳比现在温暖，很久以前连奶油也不像现在这样很快就变酸——张口闭口不离当年！我静静地坐着，暗自心想：为什么奶奶要来开导我，还要问房客是不是年轻漂亮呢？"
     nastenka "我只不过这样想一想，立刻又去计算绒线的针数，编织起袜子来，不久便把这一切全都抛在脑后了。"
-    hide granny_glow with dissolve
     hide granny with dissolve
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "一天早上，房客跑来找我们，问到我们答应过用花纸给他糊墙的事。东拉西扯，唠叨个没完，然后说道：‘娜斯津卡，你到我卧室里去把算盘拿过来。’我立刻一跃而起，不知道为什么变得满脸通红，竟忘记了我坐在那里是和奶奶别在一起的；"
     nastenka "本来是不该这样的，我应当悄悄地把别针取下，不让房客看见，谁知道我竟猛地一跳，带动了奶奶的安乐椅。我发现房客这时已看清我的底细，我便红着脸站在原地，纹丝不动，接着突然大哭起来——当时我是多么羞愧和伤心啊，真恨不得死了才好！奶奶吼了一声：‘你还站在那里干什么？"
     nastenka "’——而我却哭得更加厉害……房客看出我是由于他在场才害羞的，便低头一鞠躬，马上走开了！"
@@ -860,103 +629,61 @@ label ch3:   # 娜斯津卡的故事
     nastenka "’我说：‘最喜欢《艾凡赫》和普希金。’这一次谈话就这样结束了。"
     nastenka "过了一星期，我又在楼梯上碰见他。这一次奶奶没有打发我找什么，是我自己要去取东西。时间是两点多钟，房客往往在这个时候回来。‘您好！’他说。我回答他：‘您好！’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger default at pos_center, sp_lit
-    show lodger default glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "他说：‘怎么，您整天和奶奶坐在一块儿不觉得无聊吗？’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "听他这样问我，我不知怎的马上红了脸，觉得很难为情，又感到挺委屈，看来是由于别人问起了这件事的缘故。我本想不搭理他就走开，可是浑身没有力气。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger default at pos_center, sp_lit
-    show lodger default glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "‘请听我说，’他说道，‘您是个好姑娘！请原谅我跟您这样说话，不过，您尽可相信我，跟您的奶奶相比，我更希望您好。您连个可以去看望的女伴都没有吗？’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "我说，现在一个也没有，过去倒是有一个，她叫玛申卡，可是她到普斯科夫去了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger default at pos_center, sp_lit
-    show lodger default glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "‘请听着，’他说，‘您肯跟我一起去看戏吗？’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "‘去看戏？奶奶那边怎么办？’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger default at pos_center, sp_lit
-    show lodger default glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "‘您呀，’他说，‘别让奶奶知道就得了……’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "‘不，’我说，‘我不想骗奶奶。再见，先生！’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger default at pos_center, sp_lit
-    show lodger default glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "‘好吧，再见。’他说。再也没有讲什么话。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "可是刚吃过饭，他就到我们房间里来了。他坐了下来，跟奶奶说了好长时间的话，问她出门到过什么地方，有没有熟人——接着忽然说：‘今天我在歌剧院订下了包厢，演出的是《塞维利亚的理发师》，有几个熟人本来都想去，后来又不去了，我手里还剩下一张票。’"
     nastenka "‘《塞维利亚的理发师》！’奶奶叫了起来，‘是当年常演的那个理发师吗？’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger default at pos_center, sp_lit
-    show lodger default glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "‘是的，’他说，‘这正是那个理发师。’说完瞅了我一眼。我一下全都明白了，不由得红了脸，我的心由于期待而猛跳起来！"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "‘不错，怎么能不知道呢！’奶奶说，‘想当年在家庭演出晚会上，我本人就扮演过罗茜娜！’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger default at pos_center, sp_lit
-    show lodger default glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "‘那么今天您不想去吗？’房客说，‘要不，我的票也就作废了。’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "‘好吧，让我们一块去吧，’奶奶说，‘为什么不去呢？我的娜斯津卡还从来没去过剧院呢。’"
     nastenka "我的天，叫人多高兴呀！我们马上收拾停当，穿戴整齐就动身了。奶奶虽说眼睛看不见，可还是想听音乐，再说，她老人家心肠好：最想让我开开心，而我们自己却永远也去不起剧院。"
     nastenka "《塞维利亚的理发师》给我留下了什么印象，我不告诉您，只想说当天的整个晚上我们的房客是那样亲切地望着我，说话是那样动听，我立刻就看出来，早晨他提出让我一个人跟他去，是想试探我。"
@@ -965,195 +692,128 @@ label ch3:   # 娜斯津卡的故事
     nastenka "时间慢慢过去，我像得了什么心病：坐也坐不稳，书也没心思念，活也干不下去，有时候笑，还故意跟奶奶怄气，有时候干脆就哭一阵子。后来我瘦了，差一点儿没病倒。演歌剧的季节过去了，房客也根本不来看我们了；"
     nastenka "我们相遇的时候——自然还是在那个楼梯上——他总是默默地、一本正经地点头，好像连句话都不肯说，等他已经走到门廊上，我还在楼梯中间呆站着，脸红得像樱桃，因为我只要遇见他，全身的血液就会向脑袋涌上来。"
     show lodger serious at pos_center, sp_dim
-    hide lodger_glow
     nastenka "现在快要讲完了。整整一年前的五月里，房客跑来找我们，对我奶奶说，他在这里的事情全都办完了，要回莫斯科住一年。我一听，脸就唰地变白了，像死人一般跌坐在椅子上。奶奶没觉察出什么来，他呢，交代一下要离开我们家，接着行个礼就走了。"
     nastenka "我该怎么办？我想来想去，发了半天的愁，最后横下一条心。他明天就要走，我决定等晚上奶奶睡下后，让一切都了结。情况也正是这样。我把几件连衣裙和必不可少的换洗衣服捆成一个小包袱，放在手里提着，半死不活地走上阁楼去找我们的那位房客。我觉得我在楼梯上足足走了一个小时。"
     nastenka "我推开他的门，他看见我便失声惊叫，还以为我是个幽灵呢。他赶忙跑过来给我倒水喝，因为我几乎都站不稳，心脏狂跳不止，头疼，神智也恍恍惚惚的。等我清醒了，忙把包袱放到他床上，在包袱旁坐下，双手捂住脸，呜呜痛哭，泪如泉涌。"
     nastenka "看来，他很快就明白了一切，脸色惨白地站在我面前望着我，那副悲伤的模样弄得我的心都碎了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger serious at pos_center, sp_lit
-    show lodger serious glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "‘您听着，’他开口说道，‘您听着，娜斯津卡，我一点办法也没有；我是个穷光蛋；目前一无所有，连个像样的职业都没有；如果我跟您结了婚，我们怎么过活呢？’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger serious at pos_center, sp_dim
-    hide lodger_glow
     nastenka "我们谈了很久，最后我急得简直要疯了，我说，我再也不能跟奶奶一起过日子，我要离开她，我要逃走，我不肯让人家老用别针把我别住。我说，只要他乐意，我就跟他去莫斯科，因为没有他我就活不了。羞耻、爱情、自尊心全都猛地在心中翻腾起来，我在近乎惊厥的状态下倒在了他的床上。"
     nastenka "我是多么害怕遭到拒绝啊！"
     nastenka "他默默坐了几分钟，然后站起来，走到我跟前，握住我的手。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show lodger serious at pos_center, sp_lit
-    show lodger serious glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "‘您听着，我的好姑娘，我亲爱的娜斯津卡！’他开始说道，眼里也噙着泪水，‘您听着，我向您起誓，只要有朝一日我能结婚，我的幸福就必定非您莫属，请您相信，如今只有您一个人能够使我幸福。您听着：我要到莫斯科去，在那里待上一年整。我打算闯出一番事业来。"
     lodger "等我回来了，要是您不嫌弃我，我向您发誓，我们一定会幸福。现在可不行，我不能也无权答应您什么。但我要再说一遍，即使一年之内办不到，那么总有一天肯定会成功；条件自然是除我之外您没有爱上别的人，因为我现在不能也不敢用什么诺言限制您。’"
-    hide lodger_glow with dissolve
     hide lodger with dissolve
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "这就是他跟我说的话，第二天他走了。我们相约对奶奶一字不提这件事。他主张这么办。好，现在我的故事很快就要讲完了。过去了整整一年。他来了，他到这里已经整三天，可是，可是……"
     dreamer "可是什么呢？"
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "可是他到现在还不露面！”娜斯津卡好像鼓足了勇气才回答出来，“没有消息，没有踪影……"
     nn "她说到这儿，停了下来，沉默片刻，低下头，忽然用双手捂住脸，痛哭不止，这哭声使我心里难受极了。"
     nn "我怎么也没有料到结局会是这样。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "娜斯津卡！”我用委婉的口吻欲言又止地说道，“娜斯津卡！看在上帝的分上，别哭啦！你是怎么知道的？他也许不在这里呢……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "在这里，在这里！”娜斯津卡应声答道，“他在这里，我知道。我们当时约定好的，就在那天晚上，他临走的前夕，当时我们说的话，我全跟您讲过了，我们商量妥当，便出门到这儿来散步，就在这条沿河街上。那是七点钟光景；我们坐在这张长椅上；"
     nastenka "我已经不哭了，心里甜丝丝地听着他说话……他说，他一回来立刻就来看我们，如果我不拒绝他，我们就向奶奶讲出这一切。如今他来了，我知道这一点，可就是见不着他，见不着！"
     nn "她忍不住又流下泪来。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "我的天！难道没办法帮您减轻痛苦吗？”我大声说道，万般无奈地从长椅上霍地站起来，“请问，娜斯津卡，我能不能去找他一趟呢……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "难道可以这样吗？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "不，当然不可以！”我说，忽然改变了主意，“这样好了：请您写一封信吧。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不，这不行，不能这样做！"
     nn "她断然回答道，但是已经低下头，不再看我了。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "怎么不行呢？为什么不行呢？”我接着说，仍然坚持自己的意见，“不过，您知道，娜斯津卡，这要看写的是什么信！信和信可大不一样，再说……噢，娜斯津卡，就这么办！请您相信我，相信我！我不会给您乱出坏主意。这一切都会办好的。您已经迈出了第一步——为什么现在又……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不行，不行！这样做好像我要强求人家似的……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "唉，我好心肠的娜斯津卡！”我打断了她的话，忍不住要笑出来，“不，不；说到底，您有权这样做，因为他曾经答应过您。再说，我根据种种迹象看得出，他是个能体贴入微的人，品行端正。”我接着说道，由于自己的论点和论据的逻辑性而越加兴奋，“他的为人怎样？"
     dreamer "他曾许下诺言来约束自己。他说过，只要他结婚，就非您不娶；他让您有充分的自由，哪怕是现在也可以对他表示拒绝……在这种情况下您可以首先表明态度，比方说，即使您想解除他许下的诺言也未尝不可……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "请问，要是您的话，您会怎么写呢？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "写什么？"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "写这封信呀。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "要是我的话，我会这样写：‘敬爱的先生……’"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "非得写上‘敬爱的先生’不可吗？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "非写不行！至于为什么要这样写呢，我想是……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好吧，好吧，请说下文吧！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "‘敬爱的先生！’"
     dreamer "‘对不起，我……’不，不必，用不着道歉！事实本身足以证明一切。您可以干脆这样写："
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "‘我在给您写信。请原谅我缺乏耐心；不过整整一年来我还是很幸福的，因为我满怀希望；如今，这令人疑虑的日子，我连一天也难以支撑，难道这是我的过错吗？现在，您已经来了，也许您已经改变初衷。果真如此的话，这封信就要向您表明，我决不会怨恨和责备您。"
     nastenka "我不责备您，是因为我无权占有您的心；我是命该如此啊！’"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "‘您是个高尚的人。您在看到我忍不住写下的这几行文字时，不会付之一笑或大伤脑筋。请想一想，这可是个不幸的姑娘写的啊，她孤孤单单，没有人给她指点，没有人可以商量，因而她从来也管束不住自己的心。不过，请原谅，我的内心已暗暗——虽说只是一瞬间——出现了疑团。"
     dreamer "您决不会欺侮，甚至在情理上也决不会蔑视那个姑娘，她过去和现在都对您一往情深。’"
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "对，对！这跟我想的一个样！”娜斯津卡喊道，眼睛里闪现出欢快的光彩，“啊！您打消了我的疑虑，您一定是上帝为我派来的！谢谢，谢谢您！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "谢什么？是感谢上帝派我来吗？"
     nn "我反问道，高兴地望着她那喜气洋洋的面庞。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "对，那也值得感谢。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "啊，娜斯津卡！有时候我们感谢某些人，仅仅因为他们和我们一起活着。我感谢您，因为您让我遇见了您，因为我将一辈子记着您！"
     dreamer "嗯，够啦，够啦！现在这么办吧，请听我说：当时曾经约定，只要他一到，就会立刻转告我，办法是在我那几个忠厚老实的熟人家的某个地方给我留下一封信，他们对这事一无所知；"
     dreamer "如果担心在信里无法把情况全说清楚，不能给我写信的话，那他就在抵达的当天十点钟，准时到我们约定会面的这个地方来。我已经知道他到了；可是已是第三天，居然既没有收到信，也没有见到人。早上，我实在没办法从奶奶那里跑出来。"
     dreamer "请您明天把我的信亲手交给我跟您谈到过的那几个好心人，他们会转交给他的。如果有回信，请您晚上十点钟一定把信带来。"
     dreamer "可是信呢，信呢！要知道先得写好信啊！这一切也许以后才能办妥呢。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "信……”娜斯津卡有点不好意思地回答道，“信……可是……"
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nn "然而，她没有把话讲下去。她先是扭过脸去不看我，脸红得好似玫瑰花，我突然感到手里塞来一封信，原来是一封早就写好、准备停当、已经封口的信。我的头脑忽地闪过那种亲切而又动人的往事。"
     nastenka "罗——罗，茜——茜，娜——娜。"
     nn "我先哼了起来。"
     nastenka "罗茜娜！"
     nn "我们俩一齐哼着，我兴奋得差点把她抱住，她的脸红得厉害极了，她含着眼泪笑了，那乌黑的睫毛上闪动着珍珠般的泪珠。"
     nastenka "行啦，行啦！现在您该走啦！”她急急切切地说，“信已经给了您，这是送信的地址。可以分手了！再见！明天见！"
-    hide nastenka_glow with dissolve
     hide nastenka with dissolve
     nn "她紧紧地握了握我的两只手，又点点头，便箭也似的向她住的那条小巷飞跑而去。我目送着她的背影，在原地站了很久。"
     nastenka "明天见！明天见！"
@@ -1182,176 +842,120 @@ label ch4:   # 第三夜
     nn "我怀着满腹心事去找她，好不容易才等到见面的时刻。当初我没有预料到我会有现在这样的感受，也没有预见到，这一切的结局竟会不合我的心愿。她高兴得容光焕发，正等待着回音。回音就是他，是那个人。他应当到来，应当在她的召唤下飞奔而来。"
     nn "她比我早到了整整一小时，起初她总是咯咯地笑，听我说每一句话都要笑。我刚说几句便默不作声了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "您知道我为什么这么高兴吗？”她说，“为什么这样高兴地望着您？为什么今天这样喜欢您？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "为什么呢？"
     nn "我追问道，我的心开始颤抖起来。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "我之所以喜欢您，是因为您没有爱上我。要是别人处在您的地位，一定会跟我纠缠捣乱。一定会叹气、生病，而您却是这样的好！"
     nn "她说到这儿，用力攥住了我的手，疼得我差一点儿叫了起来。她笑了。"
     nastenka "天啊！您是个多好的朋友啊！”过了一分钟，她神情严肃地说，“真是上帝打发您来帮助我的！唉，要是现在您不在我身边，我又会怎样呢？您是多么忠厚无私啊！您是多么真心实意地爱护我啊！等我出嫁后，我们会是非常要好的朋友，比兄妹还亲。我一定爱您，几乎像爱他一样地爱您……"
     nn "在这一瞬间，我伤透了心，同时又有一种类似欢笑的感觉开始在心中颤动。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "您太激动了，”我说，“您害怕了，您以为他不会来了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "上帝保佑您！”她答道，“如果我不像现在这么幸福，您的缺乏信心、您的责备，一定会使我伤心落泪。然而，您毕竟开导我去考虑，让我有了另外的想法；不过，以后我再去考虑吧，现在我得向您承认，您说得很对。是的！我有点忘乎所以；"
     nastenka "我似乎在全心全意地期待着，无论对什么都有点过分敏感。但是，以后再谈感情的事吧！……"
     nn "这时传来了脚步声，昏暗中出现了一个朝我们走来的行人。我们俩都紧张得发抖，差点喊了出来。我松开她的手，摆出要走开的架势。但我们大失所望：那不是他。"
     nastenka "怕什么？您为什么放开我的手？”她说道，又把手伸给我，“哎，这有什么？我们可以一起迎接他。我想让他看见，我们俩是怎样地相亲相近。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "我们俩是怎样地相亲相近！"
     dreamer "噢，娜斯津卡，娜斯津卡！”我暗自思忖，“这一类话您对我说过多少遍！这种亲近，娜斯津卡，在某些时候会使人心灰意冷的。您的手冰凉，而我的手却热得像火烧一样。你多么糊涂，娜斯津卡！……唉！一个幸福的人有时是多么令人难以忍受啊！但是我却不能生你的气！……"
     nn "我的心终于憋闷得难以忍受了。"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "您听我说，娜斯津卡！”我叫道，“您知道我这一整天是怎么熬过来的吗？"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "嗯，怎么，怎么回事呀？快讲出来吧！为什么您直到现在总是不说话呢？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "首先，娜斯津卡，您委托的事，我都一一照办，送了信，拜访了您那些好心的朋友，后来……后来我就回家睡觉去了。"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "就这些事？"
     show dreamer shy at pos_left, sp_dim
-    hide dreamer_glow
     show dreamer shy at pos_left, sp_lit
-    show dreamer shy glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "对，差不多就这些事，”我回答道，尽力克制住自己，因为我的眼睛里已经充满了愚蠢的泪水，“我醒来时离我们约定见面的时刻只有一小时了，不过好像没有睡觉似的，我不知道自己是怎么了。"
     dreamer "我来是要把这一切全都告诉您，仿佛对我来说时间已经停滞，好像有一种感触、一种情愫，从这时起应当在心中永驻，仿佛一分钟应当无限延续，又好像全部生活对我来说已经停顿不前……"
     dreamer "我醒来时觉得恍惚有一支乐曲，一支早已熟悉、过去在什么地方听过的乐曲，一支已被忘却、甜美欢乐的乐曲在我一生中一直都跃跃欲出，直到现在……"
     show dreamer shy at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "哎呀，我的天！我的天！”娜斯津卡打断了我的话，“这一切都是怎么回事？我一个字也听不明白。"
     show dreamer shy at pos_left, sp_lit
-    show dreamer shy glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "唉，娜斯津卡！我真想用什么办法让您也能感受到我这种奇怪的感觉……"
     nn "我开始用伤心的语气说道，话音里仍隐隐含有一线希望，虽然是十分渺茫的希望。"
     show dreamer shy at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "够了，别说了，够了！"
     nn "她说道，一下子就猜中了，这个机灵的姑娘！"
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nn "她不知怎的忽然变得异乎寻常地饶舌、欢快和调皮。她挽起我的胳膊，笑了起来，还逗我也笑，我窘迫地每说一句话，都会引得她发出那么清脆响亮、久久不息的笑声……我生气了，她突然又开始撒娇。"
     nastenka "您听着，”她说，“要知道，您没有爱上我，我还有点遗憾呢。以后您应当学会理解人的心理！不过，倔强的先生，您毕竟不能不夸奖我为人坦率单纯。我所有的情况，哪怕是我头脑里闪过的愚蠢念头也全都对您说了。"
     show dreamer shy at pos_left, sp_lit
-    show dreamer shy glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "听！大概是十一点钟吧？"
     nn "我说道，这时从城里远处的钟楼上传来节奏分明的钟声。她突然打住话头，止住笑声，开始计起数来。"
     show dreamer shy at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "对，是十一点。"
     nn "她说道，语气终于变得犹疑而不安。"
     nn "我马上懊悔不已，深感不该使她受到惊吓，让她去数钟声，我咒骂自己这种可恶的一时冲动。我为她感到难过，不知道怎样来赎自己的罪过。我开始安慰她，找出他没有露面的种种原因，提出各种理由和推论。"
     nn "在这种时候，她比任何人都更易于受到哄骗，而在这种时候，无论谁都乐意听信任何安慰的话语，只要其中稍有一点道理，就会大喜过望。"
     show dreamer shy at pos_left, sp_lit
-    show dreamer shy glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "这事很可笑。”我开始解释道，对我自己能把理由讲得非常明白而越加激动和得意，“他的确不可能来；连我也上了您的当，您把我弄糊涂了，娜斯津卡，我也没算好时间……您只要想一想：他最多刚刚来得及收到您的信；如果他不能来，可以想见他还要写回信，回信最早也得等明天才能送来。"
     dreamer "明天一早我就去取信，并且会马上告诉您。最后，还要估计千百种可能性：比如，信送到的时候他不在家，也许到目前他还没读过信。要知道，什么情况都会发生的。"
     show dreamer shy at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "对，对！”娜斯津卡回答道，“我想都没想到这一点；不错，什么情况都会发生。”她用非常通情达理的语气接着说，话音里听得出有一种异样的隐秘思绪，犹如那种令人心烦的不和谐音。“您必须办这么一件事，”她继续说道，“明天去一趟，越早越好，只要得到什么消息，立刻通知我。"
     nastenka "您不是知道我的住址吗？"
     nn "于是她把自己的住址又向我说了一遍。"
     nn "此后她对我忽然显得那样温柔，那样羞怯……好像在注意倾听我跟她说的话；可是，当我向她提问时，她却一言不发，不好意思地扭过头去。我望了望她的眼睛——一点不错：她哭了。"
     nastenka "哎呀，怎么能这样，怎么能这样呢？唉，您真是个孩子！太孩子气了！……别哭啦！"
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nn "她想勉强一笑，让自己平静下来，但下巴还是抖个不停，胸脯一直起伏不定。"
     nastenka "我正在琢磨您这个人呢，”她沉默了一会儿，然后对我说，“您是这样的善良，我要是感觉不到这一点，简直就是块石头了……您知道现在我脑子里想些什么吗？我把你们俩做了一番对比。为什么他不是您呢？为什么他不像您呢？他可不如您，虽说我爱他胜过爱您。"
     nn "我一句话也回答不出来。她似乎在期待着我说些什么。"
     nastenka "当然，也许我还没有充分认识他，还不十分了解他。您知道，我好像一直有点怕他；他总是那么严肃，似乎有几分高傲。我当然知道，他不过是看上去如此罢了，他的心里比我更加充满柔情……我忘不了提着小包袱去找他时，他用怎样的目光望着我，这事您还记得吗？"
     nastenka "不过，我总觉得对他有点儿太敬重了，这就显得我们似乎不太般配，您说是吗？"
     show dreamer shy at pos_left, sp_lit
-    show dreamer shy glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "不，娜斯津卡，不，”我回答说，“这表明您爱他胜过爱世上的一切，而且远远胜过爱您自己。"
     show dreamer shy at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好，姑且认为是这样吧，”天真淳朴的娜斯津卡说道，“不过，您知道我现在又想到了什么吗？我现在要说的并不是他，只是泛泛地讲一讲罢了；这一切在我的头脑里早就考虑过了。请听着，为什么我们大家不能像兄弟一般相处？"
     nastenka "为什么即使是最好的人也好像总要向别人隐瞒什么，不肯吐露真情？为什么明知你的话不会被别人当成耳旁风，却仍然不肯直截了当地倾诉衷曲？事实上，每一个人看上去都好像比他的本来面貌严厉得多，仿佛大家都怕感情的表露过于匆促会委屈了自己的感情……"
     show dreamer shy at pos_left, sp_lit
-    show dreamer shy glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "噢，娜斯津卡，您说得对；可是造成这种现象的原因多着呐。"
     nn "我插了话，这时我比任何时候都更能克制自己的感情。"
     show dreamer shy at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不，不！”她深情地回答道，“拿您来说吧，您和别人就不一样！真的，我不知道怎样才能向您表达出自己的感觉；不过，我觉得，以您为例吧……就说现在……我觉得，您已为我做出某种牺牲。"
     nastenka "”她羞涩地接着说，飞快地扫了我一眼，“请原谅我这样和您说话：您知道我是个头脑简单的女孩子；我没见过什么世面，真的，有时很不会讲话，”她又接着说，由于某种隐秘的感情，声音有些发颤，同时还想强作笑脸，“不过，我只是想告诉您，我也能感觉到这一切，我深怀感激……"
     nastenka "啊，愿上帝为此赐给您幸福！您以前对我讲过的那个幻想家的故事完全是虚构的，也就是说，我的意思是，这跟您毫不相干。您正在康复，真的，您完全是另一个人，跟您自己描绘的不大一样。如果有朝一日您爱上了什么人，愿上帝降福给您和那个姑娘！"
     nastenka "我无须向她表示什么祝愿，因为她和您在一起会很幸福。我知道这一点，因为我自己也是个女人，既然我对您这么说了，您就应该相信我的话……"
     nn "她停了下来，紧紧地握了握我的手。我也激动得说不出话来。这样过了好几分钟。"
     show nastenka sad at pos_right, sp_lit
-    show nastenka sad glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "对，看来他今天不会来了！”她抬起头，终于说道，“太晚了！……"
     show dreamer shy at pos_left, sp_lit
-    show dreamer shy glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka sad at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "他明天肯定会来的。"
     show nastenka smile at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer shy at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka smile at pos_right, sp_lit
-    show nastenka smile glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "对，”她大为高兴，又补充了几句，“现在我自己也看得出，明天他才会来。好，那就再见吧！明天见！要是下雨，我也许不来了。但后天我一定来，不管我发生了什么事，非来不可；请您务必到此相见；我想看到您，我要把一切都告诉您。"
-    hide nastenka_glow with dissolve
     hide nastenka with dissolve
-    hide dreamer_glow with dissolve
     hide dreamer with dissolve
     nn "此后，在我们分别的当口，她把手伸给了我，用明亮的目光扫了我一眼，说道："
     nastenka "从今以后我们会永远在一起的，不是吗？"
@@ -1372,50 +976,34 @@ label ch5:   # 第四夜
     hide blkt with dissolve
     hide blk with dissolve
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     nn "天啊！这一切是怎样结束的啊！这一切又是用什么样的方式告终的啊！我九点钟到达。她已经在那里了。我很远就认出她来；她站在那里，跟第一次相见时一样，胳膊肘支在河边栏杆上，没听见我已经走到她身旁。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "娜斯津卡！"
     nn "我向她高声呼唤，一面尽力克制住激动的心情。"
     nn "她很快向我转过身来。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "喂！”她说，“喂！快点儿！"
     nn "我茫然不解地望着她。"
     nastenka "喂，信在哪儿？把信带来了吗？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "没有，我没有收到信，”我终于说，“难道他还没露面吗？"
     show nastenka sad at pos_right, sp_dim
-    hide nastenka_glow
     nn "她的脸色苍白得可怕，久久地凝视着我，一动也不动，我把她的最后一线希望打碎了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka sad at pos_right, sp_lit
-    show nastenka sad glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "哦，不要管他了！”她终于说出了这句话，声音时断时续，“不要管他了，既然他这样抛弃了我。"
     nn "她垂下眼睛，随后又想看我一眼，可是她没能做到。她用好几分钟去努力克制内心的激动，但还是猛地转过身去，把胳膊肘支在河沿的栏杆上，突然流下泪来。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka sad at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "别这样，别这样！"
     nn "我刚开口，可一看见她那副模样，便没有勇气讲下去了，再说，我又能说些什么呢？"
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不必安慰我！”她哭着说，“您不要再提他，不要说什么他一定会来，不要说他决不会这么狠心、这么残酷地抛弃我，他已经这样做了。这是为什么，为什么啊？难道我写的那封信，那封倒霉的信里，有什么不妥吗？……"
     nn "这时，她已哭得声音哽咽，我望着她如此悲伤，心都要碎了。"
     nastenka "哼，这真是太残酷无情了！”她又开口说道，“连一行字，一行字都不肯写！哪怕写封回信，说他不要我、嫌弃我也好啊；整整三天了，竟不见一行字！他是多么轻率地欺侮和凌辱了一个可怜无助的姑娘啊，而姑娘的过错只不过是爱上了他！啊，这三天我忍受了多少痛苦！我的天，我的天！"
@@ -1423,135 +1011,87 @@ label ch5:   # 第四夜
     nastenka "这怎么可能呢？您评评理看，请告诉我，看在上帝的分上，请为我解释清楚——这叫我无法理解——一个人做事怎么能像他对待我这样蛮横粗暴啊！没写来一个字！世界上最下贱的人得到的同情怜悯都比我还多呢。也许他听到了什么闲言碎语，也许有人向他说了我的坏话？"
     nastenka "”她高声说着，又问起我来，“您是怎么、怎么想的呢？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "听我说，娜斯津卡，明天，我想用您的名义去找他一趟。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "嗯！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "我要问个水落石出，把一切都告诉他。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "嗯，嗯！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "您写封信吧。别说不行，娜斯津卡，别说不干！我要让他对您的所作所为肃然起敬，他会明白一切的，要是……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不，我的朋友，不。”她打断了我的话，“够了！我不会再写一个字、一句话——够了！我不了解他，我再也不爱他了，我要把他……忘……掉……"
     nn "她已经说不下去了。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "冷静点，冷静点！在这儿坐下，娜斯津卡。"
     nn "我一边说，一边拉她坐到长椅上。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "我很冷静。够了！这没什么！这是眼泪，眼泪很快就会干的！怎么，您以为我会自寻短见，我会投河吗？……"
     nn "我心情激动；我想说话，可就是说不出来。"
     nastenka "您听着，”她抓起我的一只手，继续讲道，“您说说看：您要是他，总不会这样做吧？您总不会抛弃一个主动找您的姑娘，无情地当面奚落她那脆弱的、愚昧的心吧？您总会爱护她吧？"
     nastenka "您一定会想到，她孤孤单单，不会照料自己，无法约束自己不去爱您，她不应该被责备，因为她没有任何过错……她什么也没有做！……噢，我的天，我的天……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "娜斯津卡！”我克制不住自己的激动，终于大声叫道，“娜斯津卡！您是在折磨我！您是在刺痛我的心，您是想要我的命！娜斯津卡！我无法再保持沉默！我必须要说话了，要说出此刻充满胸膛的千言万语……"
     nn "我边说边从长椅上站起来。她抓住我的手，惊讶地望着我。"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "您怎么啦？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "听我说！”我讲得很果断，“您听我说，娜斯津卡！我现在要说的全是废话，全是胡话，全是蠢话！我知道，这种事情永远不可能发生，但我却不能沉默不语。考虑到您现在的痛苦，我要事先求您原谅！……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "哦，什么，什么？”她停止哭泣，全神贯注地望着我说，而那双吃惊的眼睛却闪现出好奇的异样光彩，“您怎么啦？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "这是无法实现的，可是我爱您，娜斯津卡！就是这件事！好，现在我把什么都讲出来！”我把手一挥，说道，“现在您就会明白，您还能不能仍像刚才那样和我说话，您到底还能不能倾听我要对您说的话呢……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "哎，这是怎么啦，怎么啦？”她打断了我的话，“这又会怎样呢？噢，我早就知道您爱我，然而我一直觉得，您不过是挺喜欢我罢了……啊，我的天，我的天啊！"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "最初不过是单纯的喜欢而已，娜斯津卡，可是现在，现在……我正像您过去提着您的小包袱去找他时一样。我的境遇还不如您，娜斯津卡，因为他那时还没有爱上什么人，而您现在却已经爱上了。"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "您跟我说了些什么呀！总之，我根本听不懂您的话。不过，请注意，这究竟是为什么呢？不是说为了什么目的，而是说您究竟为什么要这样，而且这样突然……我的天！我说的都是蠢话！不过您……"
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nn "娜斯津卡完全心慌意乱了。她两颊通红，两眼向地面望去。"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "怎么办，娜斯津卡，我该怎么办啊！我错了，我肆意妄为……可是，不，不，我没有错。娜斯津卡，我感觉到了这一点，体会到了这一点，因为我的心告诉我，我是对的，因为我无论如何也不会委屈您，欺侮您！我过去是您的朋友；嗯，现在仍然是您的朋友；我没有背信负心。"
     dreamer "看，现在我在流泪，娜斯津卡。让泪水流吧，流吧，眼泪不会妨碍任何人。眼泪会干的，娜斯津卡……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "请坐下，请坐下，”她说，让我坐在长椅上，“唉，我的天呀！"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "不！娜斯津卡，我不坐；我再也不能待在这里，您再也不会见到我了；我把话说完就走。我只想告诉您，您本来永远不会发现我在爱着您。我本想保守秘密。我本来不想在这个时候表现得自私自利使您伤心。不！可是我现在再也忍耐不住了；"
     dreamer "您亲口讲的这件事，这是您的错，完全是您的错，可我没有错。您不能把我从您的身旁赶走……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不，不，我决不会赶走您，不！"
     nn "娜斯津卡说，竭力要掩饰内心的慌乱，这可怜的姑娘。"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "您不会赶走我？不！我却早想从您的身旁跑开。"
     dreamer "我就走，只是先要把一切讲清楚，因为刚才当您在这里说话的时候，我是坐不住的，当您由于，嗯，由于（让我明白说出这一点吧，娜斯津卡），由于遭到遗弃，由于人家拒绝了您的爱情，而在这里哭泣、难过的时候，我就已感觉到，就已体会到，我的心里有着那么多对您的爱，娜斯津卡，"
     dreamer "那么多的爱！……我是这样的痛苦，因为我对您爱莫能助……因为我的心碎了，所以，我，我——不能沉默，我非说不可，娜斯津卡，我非说不可！……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "对，对！那就跟我讲吧，就如此这般跟我讲吧！”娜斯津卡说道，做了个令人莫名其妙的动作，“您也许觉得奇怪，我会这样跟您说话，但是……您讲吧！回头我再告诉您！我把一切都告诉您！"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "您在可怜我，娜斯津卡；您不过是可怜我，我亲爱的朋友！失去的无法挽回！说过的无法收回！不是这样吗？嗯，现在一说您全都明白。嗯，这是出发点。嗯，很好！现在这一切都挺好；您只要听着就是了。您坐在那里哭泣的时候，我在暗自思忖（噢，请让我说出我的想法吧！"
     dreamer "），我想（不用说，这当然是不可能的，娜斯津卡），我想，您……我想，您是由于什么原因……对，完全是另外的什么原因，而不再爱他了。"
     dreamer "要是果真如此——我昨天和前天都想过这件事，娜斯津卡——要是果真如此，我一定会这样做，我肯定会这样做，那就是要让您爱上我：因为您说过，因为您亲口说过，娜斯津卡，您几乎已完全爱上了我。那么，下一步怎么办呢？嗯，我想说的差不多快要说完了；"
@@ -1559,35 +1099,24 @@ label ch5:   # 第四夜
     dreamer "请听着，我的朋友——因为您毕竟是我的朋友——不错，我是个普通人，一个穷人，无足轻重，但问题不在这里（我不知怎的总是词不达意，这是由于心慌意乱的缘故吧，娜斯津卡），问题在于我会这样地爱您，这样地爱您，即使您还爱着他，继续爱着那个我不认识的人，"
     dreamer "您也无论如何不会觉察到我的爱在什么时候成为您的一种负担。您在每一分钟只会听到、只能感到，在您身边跳动着的是一颗感激的、满怀热忱的心，一颗愿为您效命的火热的心……啊，娜斯津卡，娜斯津卡！您在我身上施了什么魔法啊……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不要哭了，我不想让您哭，”娜斯津卡急忙从长椅上站起来说，“我们走吧，起来，跟我一起走，别哭，别哭。”她一面说，一面用手绢擦我的眼泪，“好，我们现在就走，我说不定还会告诉您一些什么……"
     nastenka "是呀，既然现在他已经抛弃了我，已经把我忘掉了，虽说我还爱着他（我并不想欺骗您）……不过，还是要请您听我说，要请您回答我。比方说吧，如果我爱上过您，也就是说，如果我只是……噢，我的朋友，我的朋友！"
     nastenka "我忽然想起，忽然想起我委屈了您，当时我嘲笑了您的爱情，还夸奖您没有爱上我！……噢，天啊！我怎么没有预见到这一点，我太愚蠢了，竟然没有预见到，不过……嗯，我已下定决心把一切都告诉您……"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "喂，娜斯津卡，您知道吗？我要离开您，这就是我的想法！我简直是在折磨您啊。现在，您因为嘲笑过我而受到良心的责备，而我却不愿意，对，不愿意您更加痛苦……当然，这是我的错，不过，娜斯津卡，只好再见吧！"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "请留步，您听我说：您能再等一会儿吗？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "等什么？怎么了？"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "我爱他；但是这种爱就要终结，它也应当终结，我不能不终结；我已感觉到它正在消失……谁知道呢，也许今天就会了结，因为我恨他，因为您在这里陪着我一起哭泣的时候，他却在嘲笑我；因为您不像他那样嫌弃我；因为您爱我，而他却不爱；因为，总之，我自己也爱上了您……"
     nastenka "是的，我爱您！我就像您爱我一样地爱您；要知道，我以前就对您说过这种话，您也亲耳听到过——我爱您，因为您胜过他，因为您比他高尚，因为，因为他……"
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nn "可怜的姑娘是这样地感情冲动，以至连话都说不下去了，一头扑在我的肩上，后来又依着我的胸膛，伤心地哭了起来。我抚慰她，劝说她，但她还是哭个不停；她一直握着我的手，抽抽搭搭地说：“等一下，等一下；我这就不哭了！我要告诉您……"
     nn "您别以为我流泪是由于软弱，请稍等一会儿，马上就会没事的……”她终于不哭了，忙擦干眼泪，我们又一起往前走去。我想说句话，她却一再求我再等一等。我们都沉默无语……"
     nn "最后，她鼓足勇气说了起来……"
@@ -1598,218 +1127,138 @@ label ch5:   # 第四夜
     nastenka "哎，算了，不说这些也罢。”娜斯津卡停了一下，激动得喘不过气来，“我不过是想告诉您……我想告诉您，尽管我爱上了他（不，是曾经爱过他），尽管有过这件事，但是，如果您仍然会说……如果您觉得您的爱是这样强大，以至能从我的心灵里最终消除掉过去的爱……"
     nastenka "如果您愿意可怜我，如果您不想抛下我一个人听天由命，得不到安慰，也没有希望，如果您打算永远爱我，就像您现在爱我一样，那么，我可以起誓，我的感激之情……我的爱情最终将不会辜负您的爱……现在您愿意接受我吗？"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "娜斯津卡，”我泣不成声地叫道，“娜斯津卡！……啊，娜斯津卡！……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka tears at pos_right, sp_lit
-    show nastenka tears glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好了，好了！现在完全不必这样了！”她说，好不容易才克制住自己的感情，“好了，现在该说的都说了；不是吗？对吗？瞧，您很幸福，我也很幸福；别再提这件事了，一个字也别提；等一等；请原谅……看在上帝的分上，换个话题，谈点别的什么吧！……"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka tears at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "对，娜斯津卡，对！这件事谈得也够了，现在我可幸福了，我……嗯，娜斯津卡，嗯，我们说点别的吧，快点，快点说呀；好！我等着呢……"
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     nn "可是，我们不知道谈什么，我们一会儿笑，一会儿哭，我们说了成千上万句互不连贯、毫无意义的话；我们一会儿沿着人行道走去，一会儿又突然折返，横穿马路；随后停顿片刻，再走过堤岸；我们简直像两个孩子……"
     dreamer "我现在一个人生活，娜斯津卡，”我说，“可是明天……噢，当然啰，您知道，娜斯津卡，我很穷，总共才有一千二百卢布，不过这没关系——"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "当然没关系，我奶奶领养老金；因此不会加重我们的负担。应当跟奶奶一块儿生活才是。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "当然跟奶奶一块儿过……只是还有个玛特廖娜……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "噢，我们家也有个菲克拉！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "玛特廖娜很善良，仅仅有一个缺点：她缺少想象力，完全没有想象力；不过这不要紧！……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "反正是这么一回事，她们俩倒可以做伴；不过您明天应当搬到我们家里来。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "这怎么行？搬到你们家！好吧，我乐意。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "对，您可以在我们家租一间房。我们家上面有个小阁楼；现在空着呢；从前的房客是个贵族老太太，她已经搬走了，我知道奶奶想找个年轻人来住，我说：‘为什么要找个年轻人呢？’她说：‘是这样，我老了，可是你，娜斯津卡，别以为我想做媒，把你嫁给他。"
     nastenka "’我猜得出，她就是这个意思……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "哎呀，娜斯津卡！"
     nn "我们俩都笑了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好，不说了，不说了。您住在什么地方？我居然忘记了。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "在那边，一座什么桥附近的巴拉尼科夫公寓。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "那是一座挺大的公寓吗？"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "对，是一座挺大的公寓。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "噢，我知道那座房子挺不错；不过您要明白，您最好还是退了它，尽快搬到我们家来吧……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "明天吧，娜斯津卡，明天吧；我还欠那里一点房租呢，不过这算不了什么……我马上就要领到薪水了……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "您知道，我也许要去教书呢；我想自学，再去教课……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "嗬，这可太好了……我不久还能领到一笔奖金呢，娜斯津卡……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "这么说，您明天就会成为我的房客啰……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "不错，我们可以一起去听《塞维利亚的理发师》，因为目前又快要上演这出戏了。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好，我们一起去，”娜斯津卡笑着说，“不，我们最好不去听《塞维利亚的理发师》，而去听别的……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "嗯，好吧，听别的；当然，这样更好些，我怎么没想到……"
     nn "我们俩一边这样说着话，一边往前走，仿佛在云雾中一般，好像我们自己也不知道是怎么回事。我们有时停下脚步，在一个地方谈了半天，有时信步前行，漫无目标，后来又是时哭时笑……娜斯津卡忽而提出要回家，我哪敢劝阻，本想把她送回家去；"
     nn "我们动身走了一刻钟，竟突然发觉又回到了河堤上我们坐过的长椅旁边。她忽而唉声叹气，眼里又涌出了泪水；我害怕起来，直打寒噤……可是她立刻握紧我的手，拉着我边走边说，讲个不停……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "现在是时候了，我该回家了；我想，天已经很晚了，”娜斯津卡终于说道，“我们不能再这样孩子似的胡闹了！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "说得对，娜斯津卡，只是我现在还不困，还不想回家。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "我好像也不想睡；不过您还是送我回家吧……"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "当然！"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "不过，这次我们一定要回家去。"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "当然，当然……"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "这是真话吗？……因为迟早总得回家呀！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "是真话。"
     show dreamer default at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka joy at pos_right, sp_lit
-    show nastenka joy glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     nastenka "好，我们走吧！"
     show dreamer default at pos_left, sp_lit
-    show dreamer default glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     show nastenka joy at pos_right, sp_dim
-    hide nastenka_glow
     dreamer "走吧。"
     show dreamer excited at pos_left, sp_lit
-    show dreamer excited glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "您往天上看看，娜斯津卡，您看看！明天会是个好天气；多么蓝的天空，多么好的月亮！您看看：这片黄色的云彩就要遮住月亮了，您看，您看！……不，它从旁边飘过去了。您看，您看呀！……"
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     nn "可是娜斯津卡并没有去看云彩，她默默地站着，呆若木鸡；过了一分钟，她不知怎的竟畏畏缩缩地紧靠在我身上。我握着她的那只手不住地颤抖；我看了看她……她向我靠得更紧了。"
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nn "这时，从我们身旁走过一个年轻人。他忽然停下脚步，仔细端详了我们一阵，然后又走了几步。我的心忽然哆嗦起来……"
     dreamer "娜斯津卡，”我轻轻说道，“那个人是谁啊，娜斯津卡？"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_lit
-    show nastenka expect glow as nastenka_glow at pos_right, sp_glowfx behind nastenka
     show lodger default at pos_center, sp_dim
-    hide lodger_glow
     nastenka "这就是他！"
     nn "她悄声回答道，更紧地依偎着我，抖得更加厉害……我几乎站都站不住了……"
     show dreamer excited at pos_left, sp_dim
-    hide dreamer_glow
     show nastenka expect at pos_right, sp_dim
-    hide nastenka_glow
     show lodger default at pos_center, sp_lit
-    show lodger default glow as lodger_glow at pos_center, sp_glowfx behind lodger
     lodger "娜斯津卡！娜斯津卡！是你呀！"
     nn "我们背后传来了呼唤声，这时年轻人又朝我们走了几步……"
     nn "天啊，那是什么样的尖叫啊！她猛地战栗得多么厉害啊！她是怎样冲出我的怀抱，迎面向他扑过去的啊！……我站在那里望着他们，就跟死人一般。"
     nn "可是，她刚向他伸过手去，刚扑进他的怀里，竟忽地向我转过身来，像疾风闪电似的跑到我的身边，还没等我清醒过来，就双手一把搂住我的脖子，狂热地用力吻了吻我。"
-    hide nastenka_glow with dissolve
     hide nastenka with dissolve
-    hide lodger_glow with dissolve
     hide lodger with dissolve
     show screen cg_view("cg hug") with Dissolve(0.8)
     pause
     hide screen cg_view with Dissolve(0.8)
     nn "然后，她没对我说出一句话，又再次向他冲过去，抓住他的双手，把他拖在身后走去了。"
     show dreamer think at pos_left, sp_dim
-    hide dreamer_glow
     nn "我久久伫立……注视着他们的背影……他们俩终于从我的视野里消失了。"
 
 label ch6:   # 早晨
@@ -1824,11 +1273,9 @@ label ch6:   # 早晨
     hide blkt with dissolve
     hide blk with dissolve
     show dreamer think at pos_left, sp_dim
-    hide dreamer_glow
     nn "我的白夜是在清晨结束的。天气不好。下着雨，雨点凄凉地敲着我的玻璃窗；室内昏惨惨，院里暗沉沉。我感到头疼、晕眩，四肢微微发颤。"
     matryona "有您的信，先生，市邮局的邮差送来的。"
     show dreamer think at pos_left, sp_lit
-    show dreamer think glow as dreamer_glow at pos_left, sp_glowfx behind dreamer
     dreamer "信，谁寄来的？"
     matryona "我不知道，先生，您看吧，也许上面写着是谁寄来的。"
     nn "我撕开信封。信是她寄来的！"

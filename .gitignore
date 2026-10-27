@@ -5,3 +5,4 @@ errors.txt
 cache/
 *.rpyc
 *.bak
+game/saves/

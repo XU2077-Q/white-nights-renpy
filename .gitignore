@@ -1,0 +1,7 @@
+log.txt
+traceback.txt
+errors.txt
+.cache/
+cache/
+*.rpyc
+*.bak
